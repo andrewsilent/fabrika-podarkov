@@ -1,14 +1,145 @@
-@media screen and (max-width: 1280px) {
-  
+@media screen and (max-width: 1279px) {
+
+    section {
+        min-height: auto;
+    }
+
+    .christmas .row {
+        text-align: center;
+    }
+
+    .catalog .collection {
+        text-align: center;
+    }
+
+    .catalog .card {
+        width: 50%;
+    }
+
+    .contacts .fullscreen {
+        background-position: left center;
+        background-size: cover;
+    }
+
+}
+
+@media screen and (max-width: 1094px) {
+
+    .header {
+        position: relative;
+        padding-bottom: 30px;
+        background-color: #1D371C;
+    }
+
+    .header .row {
+        text-align: center;
+    }
+
+    .header .col {
+        display: block;
+    }
+
+    .header .phone {
+        padding: 10px 60px;
+        margin: 30px 0;
+        display: inline-block;
+    }
+
+    .christmas {
+        padding-top: 30px;
+    }
 
 }
 
 @media screen and (max-width: 1023px) {
 
+    .catalog .goto {
+        display: none;
+    }
+
+    .catalog .section-title {
+        margin: 0;
+    }
+
+    .workflow .card {
+        display: block;
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .workflow .roadmap {
+        margin: 0 0 35px 0;
+    }
+
+    .workflow .card-number {
+        display: none;
+    }
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 920px) {
 
+    .advantages .row {
+        text-align: center;
+    }
+
+    .footer .row {
+        text-align: center;
+    }
+
+    .footer .col {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .header .logo {
+        display: inline-block;
+    }
+
+    .header .menu li {
+        display: block;
+        text-align: center;
+    }
+
+    .header .menu a {
+        display: block;
+    }
+
+    .header .phone {
+        padding-right: 0;
+    }
+
+    .christmas .title {
+        font-size: 5rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .section-description {
+        font-size: 1.5rem;
+    }
+
+    .catalog .card-title, .catalog .price {
+        font-size: 2.25rem;
+    }
+
+    .catalog .button {
+        padding: 14px 30px;
+        font-size: 1.25rem;
+    }
+
+    .about .card-description {
+        font-size: 1.35rem;
+    }
+
+    .about .card-plate {
+        padding: 5% 5% 0;
+    }
   
 }

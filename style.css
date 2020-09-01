@@ -171,14 +171,10 @@ a:hover, a:active {
 body {
   width: 100%;
   min-height: 100%;
-  min-width: 640px;
+  min-width: 480px;
   color: #333;
   background-color: #fff;
   overflow-x: hidden;
-}
-
-section {
-  min-height: 100vh;
 }
 
 #wrapper {
@@ -230,6 +226,11 @@ section {
   padding: 0 20px;
 }
 
+.header .logo {
+  display: none;
+  margin: 30px auto;
+}
+
 .header .menu a {
   font: 400 3rem/1.25 'Amatic SC', cursive;
   color: #FFF;
@@ -255,11 +256,25 @@ section {
   cursor: pointer;
 }
 
+.section-title {
+  font: 700 5.75rem/1.25 'Amatic SC', cursive;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 45px 0 20px 0;
+  color: #8c734b;
+}
+
+.section-description {
+  font: 400 2rem/1.25 'PT Sans', sans-serif;
+  color: #8c734b;
+}
+
 .christmas {
   background: url(img/christmas.jpg) center center no-repeat;
   background-size: cover;
   padding-top: 150px;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .christmas::after {
@@ -314,18 +329,21 @@ section {
 }
 
 .advantages .section-title {
-  font: 400 5.75rem/1 'Amatic SC', cursive;
-  padding-top: 50px;
+  color: #FFF;
+}
+
+.advantages .collection {
+  padding-bottom: 50px;
 }
 
 .advantages .card {
   width: 320px;
   text-align: center;
+  margin: 10px 0 30px 0;
 }
 
 .advantages .card-img {
   margin: 0 auto;
-  padding-top: 50px;
 }
 
 .advantages .card-img .img {
@@ -340,7 +358,7 @@ section {
 }
 
 .advantages .card-title {
-  font: 700 2rem/1.25 'Amatic SC', cursive;
+  font: 700 2.25rem/1.25 'Amatic SC', cursive;
   text-transform: uppercase;
   padding-top: 30px;
 }
@@ -356,11 +374,7 @@ section {
 }
 
 .catalog .section-title {
-  font: 700 5.75rem/1.25 'Amatic SC', cursive;
-  text-transform: uppercase;
-  padding-top: 80px;
-  margin-bottom: 90px;
-  color: #8c734b;
+  margin-bottom: 100px;
 }
 
 .catalog .card {
@@ -368,6 +382,8 @@ section {
   color: #8c734b;
   padding: 5px 5px 80px 5px;
   font-size: 0;
+  width: 25%;
+  max-width: 461px;
   transition: box-shadow 0.5s ease 0s;
 }
 
@@ -377,13 +393,15 @@ section {
 }
 
 .catalog .card .card-img {
-  height: 421px;
-  width: 451px;
+  max-height: 421px;
+  max-width: 451px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .catalog .card .img {
   transition: transform 0.5s ease 0s;
+  width: 100%;
 }
 
 .catalog .card:hover .img {
@@ -442,21 +460,16 @@ section {
 }
 
 .about .section-title {
-  font: 700 5.75rem/1.25 'Amatic SC', cursive;
-  text-transform: uppercase;
-  padding-top: 50px;
-  color: #8c734b;
+
 }
 
 .about .section-description {
-  font: 400 2rem/1.25 'PT Sans', sans-serif;
-  color: #8c734b;
-  padding-top: 10px;
+
 }
 
 .about .collection {
   font-size: 0;
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 .about .card-icon {
@@ -529,10 +542,7 @@ section {
 }
 
 .salestart .section-title {
-  font: 700 5.75rem/1.25 'Amatic SC', cursive;
-  text-transform: uppercase;
-  padding-top: 50px;
-  color: #8c734b;
+
 }
 
 .salestart .section-img {
@@ -554,8 +564,7 @@ section {
 }
 
 .salestart .section-description {
-  font: 700 2rem/1.25 'PT Sans', sans-serif;
-  color: #8c734b;
+  font-weight: 700;
   padding: 50px 75px 50px 100px;
   background: url(img/icon_time.png) 0 center no-repeat;
   background-size: 74px;
@@ -565,7 +574,7 @@ section {
 
 .salestart .catalog {
   display: inline-block;
-  margin-top: 50px;
+  margin: 50px 0;
   font: 700 1.8rem/1.25 'PT Sans', sans-serif;
   text-transform: uppercase;
   background-color: #8c734b;
@@ -590,21 +599,15 @@ section {
 }
 
 .creative .section-title {
-  font: 700 5.75rem/1.25 'Amatic SC', cursive;
-  text-transform: uppercase;
-  padding-top: 50px;
-  color: #8c734b;
+
 }
 
 .creative .section-description {
-  font: 400 2rem/1.25 'PT Sans', sans-serif;
-  color: #8c734b;
-  padding-top: 10px;
+
 }
 
 .creative .webform {
-  padding: 30px 0;
-  margin: 0 auto;
+  margin: 45px auto;
   width: 100%;
   max-width: 800px;
 }
@@ -660,11 +663,7 @@ section {
 }
 
 .workflow .section-title {
-  font: 700 5.75rem/1.25 'Amatic SC', cursive;
-  color: #8c734b;
-  text-transform: uppercase;
-  padding-top: 50px;
-  text-align: center;
+
 }
 
 .workflow .collection {
@@ -728,16 +727,13 @@ section {
 }
 
 .contacts .section-title {
-  font: 700 5.75rem/1.25 'Amatic SC', cursive;
-  color: #8c734b;
-  text-transform: uppercase;
-  padding-top: 50px;
+
 }
 
 .contacts .fullscreen {
-  margin-top: 60px;
   height: 638px;
   background: url(img/contacts.jpg) center center no-repeat;
+  background-size: contain;
 }
 
 .contacts .contacts-plate {
@@ -745,7 +741,7 @@ section {
   color: #8c734b;
   display: inline-block;
   padding: 75px;
-  margin-top: 120px;
+  margin-top: 114px;
 }
 
 .contacts .contacts-plate p {
@@ -757,26 +753,49 @@ section {
 }
 
 .instagram .section-title {
-  font: 700 5.75rem/1.25 'Amatic SC', cursive;
-  color: #8c734b;
-  text-transform: uppercase;
-  padding-top: 50px;
+
 }
 
 .instagram .section-description {
-  font: 400 2rem/1.25 'PT Sans', sans-serif;
-  color: #8c734b;
-  padding: 20px 0 30px 0;
+
 }
 
 .instagram .collection {
   font-size: 0;
+  margin-top: 30px;
 }
 
 .instagram .card-plate {
   display: inline-block;
   overflow: hidden;
   width: 50%;
+}
+
+.instagram .card-plate:hover .cp {
+  transform: scale(1.05);
+  transition: transform 0.5s ease 0s;
+}
+
+.instagram .cp {
+  width: 100%;
+  height: 400px;
+  transition: transform 0.5s ease 0s;
+}
+
+.instagram .cp-1 {
+  background: url(img/instagram-1.jpg) center center no-repeat;
+}
+
+.instagram .cp-2 {
+  background: url(img/instagram-2.jpg) center center no-repeat;
+}
+
+.instagram .cp-3 {
+  background: url(img/instagram-3.jpg) center center no-repeat;
+}
+
+.instagram .cp-4 {
+  background: url(img/instagram-4.jpg) center center no-repeat;
 }
 
 .footer {
