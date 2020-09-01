@@ -1,7 +1,23 @@
+/* fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+/* css reset / normalize */
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var, 
+b, u, i, center, 
+dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, 
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, 
+time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -15,36 +31,44 @@ h1, h2, h3, h4, h5, h6, p {
   margin-block-end: 0;
 }
   
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, input, textarea, select, button {
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, input, textarea, select, button {
   display: block;
-}
-  
-a {
-  text-decoration: none;
-  color: #333;
-  font: 400 1rem/1.125 'Montserrat', sans-serif;
-  transition: color 0.5s ease 0s;
-  -webkit-transition: color 0.5s ease 0s;
-}
-
-a:hover, a:active {
-  color: #333;
-  transition: color 0.5s ease 0s;
-  -webkit-transition: color 0.5s ease 0s;
 }
 
 *:focus {
   outline: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background-color: #999;
+}
+
 body {
   line-height: 1;
+  min-height: 100vh;
   position: relative;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
   font: 400 1.125rem/1.25 'PT Sans', sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
   
 p {
-  font: 400 1rem/1.125 'Amatic SC', cursive;
+  font: 400 1rem/1.25 'PT Sans', sans-serif;
   line-height: 1;
   padding: 0;
   margin: 0;
@@ -69,12 +93,7 @@ blockquote, q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after {
-  content: '';
-  content: none;
-}
-
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
@@ -82,6 +101,40 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font: 400 1rem/1.125 'Montserrat', sans-serif;
+  transition: color 0.5s ease 0s;
+}
+
+a:hover, a:active {
+  color: #333;
+  transition: color 0.5s ease 0s;
 }
 
 .relative {
@@ -99,22 +152,29 @@ table {
   clear: both;
   display: block;
 }
+
+/* hidden for visitors, visible for screenreader */
+
+.visually-hidden {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  overflow: hidden;
+}
+
+/* main css */
   
 body {
   width: 100%;
   min-height: 100%;
   min-width: 640px;
-  padding: 0;
-  margin: 0;
   color: #333;
   background-color: #fff;
-  position: relative;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
 }
 
 section {
@@ -131,6 +191,14 @@ section {
   max-width: 1270px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.fullscreen {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
 }
 
 .row {
@@ -163,9 +231,9 @@ section {
 }
 
 .header .menu a {
-  font: 400 1.5rem/1.25 'Amatic SC', cursive;
+  font: 400 3rem/1.25 'Amatic SC', cursive;
   color: #FFF;
-  padding: 40px 30px;
+  padding: 30px;
   display: inline-block;
   transition: background-color 0.3s ease 0s;
   -webkit-transition: background-color 0.3s ease 0s;
@@ -173,8 +241,6 @@ section {
 
 .header .menu a:hover {
   background-color: rgb(50, 200, 50, 0.1);
-
-
 }
 
 .header .phone {
@@ -187,26 +253,16 @@ section {
 .header .cart {
   display: inline-block;
   cursor: pointer;
-  height: 70px;
-  width: 70px;
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
 }
 
-.header .cart:hover {
-  transform: scale(1.1);
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
-}
-
-.first {
-  background: url(img/background.png) center center no-repeat;
+.christmas {
+  background: url(img/christmas.jpg) center center no-repeat;
   background-size: cover;
   padding-top: 150px;
   box-sizing: border-box;
 }
 
-.first::after {
+.christmas::after {
   position: absolute;
   content: '';
   top: 0;
@@ -217,12 +273,11 @@ section {
   z-index: 1;
 }
 
-.first .container {
+.christmas .container {
   z-index: 2;
 }
 
-
-.first .logo {
+.christmas .logo {
   display: inline-block;
   overflow: hidden;
   font-size: 0;
@@ -230,13 +285,13 @@ section {
   -webkit-transition: all 0.5s ease 0s;
 }
 
-.first .logo:hover {
+.christmas .logo:hover {
   transform: scale(1.1);
   transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;
 }
 
-.first .title {
+.christmas .title {
   font: 700 7rem/1 'Amatic SC', cursive;
   color: #FFF;
   text-transform: uppercase;
@@ -244,7 +299,7 @@ section {
   text-align: center;
 }
 
-.first .small {
+.christmas .small {
   font: 400 2rem/2 'PT Sans', sans-serif;
   color: #FFF;
   letter-spacing: 2px;
@@ -252,68 +307,159 @@ section {
   text-align: center;
 }
 
-.second {
+.advantages {
   text-align: center;
   background-color: #8c734b;
   color: #FFF;
 }
 
-.second .section-title {
-  font: 400 3rem/1 'Amatic SC', cursive;
+.advantages .section-title {
+  font: 400 5.75rem/1 'Amatic SC', cursive;
   padding-top: 50px;
 }
 
-.second .card {
+.advantages .card {
   width: 320px;
   text-align: center;
 }
 
-.second .card-icon {
+.advantages .card-img {
   margin: 0 auto;
   padding-top: 50px;
-  
 }
 
-.second .card-icon img {
+.advantages .card-img .img {
   max-width: 150px;
   max-height: 130px;
+  transition: transform 0.5s ease 0s;
 }
 
-.second .card-title {
+.advantages .card:hover .img {
+  transform: scale(1.1);
+  transition: transform 0.5s ease 0s;
+}
+
+.advantages .card-title {
   font: 700 2rem/1.25 'Amatic SC', cursive;
   text-transform: uppercase;
   padding-top: 30px;
-
 }
 
-.second .card-description p {
+.advantages .card-description p {
   font: 400 1rem/1.25 'PT Sans', sans-serif;
   padding-top: 30px;
 }
 
-.third {
+.catalog {
+  text-align: center;
+  padding: 0 15px;
+}
+
+.catalog .section-title {
+  font: 700 5.75rem/1.25 'Amatic SC', cursive;
+  text-transform: uppercase;
+  padding-top: 80px;
+  margin-bottom: 90px;
+  color: #8c734b;
+}
+
+.catalog .card {
+  text-align: center;
+  color: #8c734b;
+  padding: 5px 5px 80px 5px;
+  font-size: 0;
+  transition: box-shadow 0.5s ease 0s;
+}
+
+.catalog .card:hover {
+  box-shadow: 0 2px 7px rgba(65, 40, 40, 0.5);
+  transition: box-shadow 0.5s ease 0s;
+}
+
+.catalog .card .card-img {
+  height: 421px;
+  width: 451px;
+  overflow: hidden;
+}
+
+.catalog .card .img {
+  transition: transform 0.5s ease 0s;
+}
+
+.catalog .card:hover .img {
+  transform: scale(1.1);
+  transition: transform 0.5s ease 0s;
+}
+
+.catalog .card-title {
+  font: 700 4.5rem/2 'Amatic SC', cursive;
+}
+
+.catalog .weight {
+  font: 400 2.25rem/1.25 'PT Sans', sans-serif;
+}
+
+.catalog .price {
+  font: 400 4rem/2 'PT Sans', sans-serif;
+}
+
+.catalog .button {
+  font: 700 1.5rem/1.25 'PT Sans', sans-serif;
+  background-color: #8c734b;
+  color: #FFF;
+  display: inline-block;
+  padding: 18px 48px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid #8c734b;
+  border-radius: 20px;
+  transition: background-color 0.5s ease 0s;
+}
+
+.catalog .button:hover {
+  background-color: #FFF;
+  color: #8c734b;
+  transition: background-color 0.5s ease 0s;
+}
+
+.catalog .goto {
+  position: absolute;
+  left: 100px;
+  top: 37px;
+}
+
+.catalog .goto-main {
+  transition: transform 0.5s ease 0s;
+}
+
+.catalog .goto-main:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease 0s;
+}
+
+.about {
   text-align: center;
 }
 
-.third .section-title {
-  font: 700 4rem/1.25 'Amatic SC', cursive;
+.about .section-title {
+  font: 700 5.75rem/1.25 'Amatic SC', cursive;
   text-transform: uppercase;
   padding-top: 50px;
   color: #8c734b;
 }
 
-.third .section-description {
+.about .section-description {
   font: 400 2rem/1.25 'PT Sans', sans-serif;
   color: #8c734b;
   padding-top: 10px;
 }
 
-.third .collection {
+.about .collection {
   font-size: 0;
   padding-top: 50px;
 }
 
-.third .card-icon {
+.about .card-icon {
   width: 50%;
   height: 400px;
   vertical-align: top;
@@ -322,7 +468,7 @@ section {
   box-sizing: border-box;
 }
 
-.third .ci {
+.about .ci {
   background-size: cover;
   display: inline-block;
   overflow: hidden;
@@ -332,37 +478,37 @@ section {
   -webkit-transition: all 0.5s ease 0s;
 }
 
-.third .ci:hover {
+.about .ci:hover {
   transform: scale(1.1);
   transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;
 }
 
-.third .ci-1 {
+.about .ci-1 {
   background: url(img/bg_01.png) center center no-repeat;
 }
 
-.third .ci-2 {
+.about .ci-2 {
   background: url(img/bg_02.png) center center no-repeat;
 }
 
-.third .ci-3 {
+.about .ci-3 {
   background: url(img/bg_03.png) center center no-repeat;
 }
 
-.third .ci-4 {
+.about .ci-4 {
   background: url(img/bg_04.png) center center no-repeat;
 }
 
-.third .ci-5 {
+.about .ci-5 {
   background: url(img/bg_05.png) center center no-repeat;
 }
 
-.third .ci-6 {
+.about .ci-6 {
   background: url(img/bg_06.png) center center no-repeat;
 }
 
-.third .card-plane {
+.about .card-plate {
   background-color: #8c734b;
   width: 50%;
   height: 400px;
@@ -373,29 +519,41 @@ section {
   padding: 5% 7% 0;
 }
 
-.third .card-description {
+.about .card-description {
   font: 400 1.85rem/1.25 'PT Sans', sans-serif;
   color: #FFF;
 }
 
-.fourth {
+.salestart {
   text-align: center;
 }
 
-.fourth .section-title {
-  font: 700 6rem/1.25 'Amatic SC', cursive;
+.salestart .section-title {
+  font: 700 5.75rem/1.25 'Amatic SC', cursive;
   text-transform: uppercase;
   padding-top: 50px;
   color: #8c734b;
 }
 
-.fourth .section-bg {
-  background: url(img/background_3.png) center center no-repeat;
+.salestart .section-img {
   height: 600px;
   margin-top: 50px;
+  overflow: hidden;
 }
 
-.fourth .section-description {
+.salestart .section-img:hover .img {
+  transform: scale(1.1);
+  transition: transform 0.5s ease 0s;
+}
+
+.salestart .section-img .img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s ease 0s;
+}
+
+.salestart .section-description {
   font: 700 2rem/1.25 'PT Sans', sans-serif;
   color: #8c734b;
   padding: 50px 75px 50px 100px;
@@ -405,13 +563,14 @@ section {
   box-sizing: border-box;
 }
 
-.fourth .catalog {
+.salestart .catalog {
   display: inline-block;
   margin-top: 50px;
   font: 700 1.8rem/1.25 'PT Sans', sans-serif;
   text-transform: uppercase;
   background-color: #8c734b;
   border: 1px solid #8c734b;
+  border-radius: 20px;
   color: #FFF;
   padding: 35px 80px;
   letter-spacing: 0.5rem;
@@ -419,26 +578,205 @@ section {
   -webkit-transition: color, background-color 0.5s ease 0s;
 }
 
-.fourth .catalog:hover {
+.salestart .catalog:hover {
   background-color: #FFF;
   color: #8c734b;
   transition: color, background-color 0.5s ease 0s;
   -webkit-transition: color, background-color 0.5s ease 0s;
 }
 
-.fifth {
+.creative {
   text-align: center;
 }
 
-.fifth .section-title {
-  font: 700 6rem/1.25 'Amatic SC', cursive;
+.creative .section-title {
+  font: 700 5.75rem/1.25 'Amatic SC', cursive;
+  text-transform: uppercase;
+  padding-top: 50px;
+  color: #8c734b;
+}
+
+.creative .section-description {
+  font: 400 2rem/1.25 'PT Sans', sans-serif;
+  color: #8c734b;
+  padding-top: 10px;
+}
+
+.creative .webform {
+  padding: 30px 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.creative .label {
+  font: 400 1.5rem/1.25 'PT Sans', sans-serif;
+  color: #8c734b;
+  display: block;
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.creative .label span {
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.creative .text {
+  font: 400 1.5rem/1.25 'PT Sans', sans-serif;
+  width: 100%;
+  padding: 10px 25px;
+  border: 1px solid #8c734b;
+  border-radius: 10px;
+  color: #333
+}
+
+.creative .text::placeholder {
+  font: 400 0.8rem/1.25 'PT Sans', sans-serif;
+  color: #8c734b;
+  opacity: 0.5;
+}
+
+.creative .submit {
+  display: inline-block;
+  cursor: pointer;
+  font: 700 1.8rem/1.25 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  background-color: #8c734b;
+  border: 1px solid #8c734b;
+  border-radius: 20px;
+  color: #FFF;
+  padding: 35px 80px;
+  letter-spacing: 0.5rem;
+  transition: color, background-color 0.5s ease 0s;
+  -webkit-transition: color, background-color 0.5s ease 0s;
+}
+
+.creative .submit:hover {
+  background-color: #FFF;
+  color: #8c734b;
+  transition: color, background-color 0.5s ease 0s;
+  -webkit-transition: color, background-color 0.5s ease 0s;
+}
+
+.workflow .section-title {
+  font: 700 5.75rem/1.25 'Amatic SC', cursive;
+  color: #8c734b;
+  text-transform: uppercase;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.workflow .collection {
+  text-align: center;
+}
+
+.workflow .img {
+  max-width: 1020px;
+}
+
+.workflow .roadmap {
+  margin: 100px 0 50px 0;
+}
+
+.workflow .card {
+  display: table-cell;
+  width: 25%;
+  vertical-align: top;
+}
+
+.workflow .number {
+  font-size: 3rem;
+  color: #FFF;
+  background-color: #8c734b;
+  border-radius: 50%;
+  padding: 35px;
+  line-height: 30px;
+  margin-top: -3rem;
+}
+
+.workflow .card-number {
+  display: flex;
+}
+
+.workflow .card-number:before, .workflow .card-number:after {
+  content: '';
+  height: 7px;
+  background-color: #8c734b;
+  flex-grow: 1;
+}
+
+.workflow .card:first-child .card-number:before, .workflow .card:last-child .card-number:after {
+  background-color: #FFF;
+}
+
+.workflow .card-title {
+  font: 700 2.25rem/1.25 'PT Sans', sans-serif;
+  color: #8c734b;
+  text-align: center;
+  margin: 30px 0 10px 0;
+}
+
+.workflow .card-description {
+  font: 400 1.25rem/1.25 'PT Sans', sans-serif;
+  color: #8c734b;
+  padding: 0 20px;
+}
+
+.contacts {
+  text-align: center;
+}
+
+.contacts .section-title {
+  font: 700 5.75rem/1.25 'Amatic SC', cursive;
   color: #8c734b;
   text-transform: uppercase;
   padding-top: 50px;
 }
 
-.fifth img {
-  width: 1020px;
+.contacts .fullscreen {
+  margin-top: 60px;
+  height: 638px;
+  background: url(img/contacts.jpg) center center no-repeat;
+}
+
+.contacts .contacts-plate {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #8c734b;
+  display: inline-block;
+  padding: 75px;
+  margin-top: 120px;
+}
+
+.contacts .contacts-plate p {
+  line-height: 1.25;
+}
+
+.instagram {
+  text-align: center;
+}
+
+.instagram .section-title {
+  font: 700 5.75rem/1.25 'Amatic SC', cursive;
+  color: #8c734b;
+  text-transform: uppercase;
+  padding-top: 50px;
+}
+
+.instagram .section-description {
+  font: 400 2rem/1.25 'PT Sans', sans-serif;
+  color: #8c734b;
+  padding: 20px 0 30px 0;
+}
+
+.instagram .collection {
+  font-size: 0;
+}
+
+.instagram .card-plate {
+  display: inline-block;
+  overflow: hidden;
+  width: 50%;
 }
 
 .footer {
@@ -451,20 +789,12 @@ section {
   display: inline-block;
   overflow: hidden;
   font-size: 0;
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
-}
-
-.footer .logo:hover {
-  transform: scale(1.1);
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
-}
-
-.footer .logo img {
-  width: 150px;
 }
 
 .footer .copyright {
+  text-align: center;
+}
+
+.footer .copyright p {
   text-transform: uppercase;
 }
