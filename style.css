@@ -459,14 +459,6 @@ body {
   text-align: center;
 }
 
-.about .section-title {
-
-}
-
-.about .section-description {
-
-}
-
 .about .collection {
   font-size: 0;
   margin-top: 50px;
@@ -541,10 +533,6 @@ body {
   text-align: center;
 }
 
-.salestart .section-title {
-
-}
-
 .salestart .section-img {
   height: 600px;
   margin-top: 50px;
@@ -596,14 +584,6 @@ body {
 
 .creative {
   text-align: center;
-}
-
-.creative .section-title {
-
-}
-
-.creative .section-description {
-
 }
 
 .creative .webform {
@@ -662,18 +642,6 @@ body {
   -webkit-transition: color, background-color 0.5s ease 0s;
 }
 
-.workflow .section-title {
-
-}
-
-.workflow .collection {
-  text-align: center;
-}
-
-.workflow .img {
-  max-width: 1020px;
-}
-
 .workflow .roadmap {
   margin: 100px 0 50px 0;
 }
@@ -726,10 +694,6 @@ body {
   text-align: center;
 }
 
-.contacts .section-title {
-
-}
-
 .contacts .fullscreen {
   height: 638px;
   background: url(img/contacts.jpg) center center no-repeat;
@@ -750,14 +714,6 @@ body {
 
 .instagram {
   text-align: center;
-}
-
-.instagram .section-title {
-
-}
-
-.instagram .section-description {
-
 }
 
 .instagram .collection {
