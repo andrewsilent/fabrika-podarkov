@@ -133,7 +133,10 @@
                 <section class="catalog">
                     <div class="fullscreen">
                         <h2 class="section-title">Каталог</h2>
-                        <div class="collection row">
+                        <div class="control none">
+                            <button class="button goback" id="select_back"> << Назад к выбору подарка</button>
+                        </div>
+                        <div class="collection row general" id="general">
                             <div class="card col">
                                 <div class="card-img">
                                     <img src="img/present-standard.jpg" alt="" class="img">
@@ -141,7 +144,7 @@
                                 <h3 class="card-title">Стандарт</h3>
                                 <p class="weight">500 г</p>
                                 <p class="price">от 200 &#8381</p>
-                                <a href="#" class="button">Выбрать</a>
+                                <button class="button select" id="select_standard">Выбрать</button>
                             </div>
                             <div class="card col">
                                 <div class="card-img">
@@ -150,7 +153,7 @@
                                 <h3 class="card-title">Оптимальный</h3>
                                 <p class="weight">700 г</p>
                                 <p class="price">от 350 &#8381</p>
-                                <a href="#" class="button">Выбрать</a>
+                                <button class="button select" id="select_optimal">Выбрать</button>
                             </div>
                             <div class="card col">
                                 <div class="card-img">
@@ -159,7 +162,7 @@
                                 <h3 class="card-title">Отличный</h3>
                                 <p class="weight">850 г</p>
                                 <p class="price">от 400 &#8381</p>
-                                <a href="#" class="button">Выбрать</a>
+                                <button class="button select" id="select_excellent">Выбрать</button>
                             </div>
                             <div class="card col">
                                 <div class="card-img">
@@ -168,9 +171,162 @@
                                 <h3 class="card-title">Премиум</h3>
                                 <p class="weight">1000 г</p>
                                 <p class="price">от 600 &#8381</p>
-                                <a href="#" class="button">Выбрать</a>
+                                <button class="button select" id="select_premium">Выбрать</button>
                             </div>
                         </div>
+
+                        <div class="collection row boxing standard none" id="standard">
+                            <div class="card box col">
+                                <div class="card-img">
+                                    <img src="img/boxing_01.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Коробка</h3>
+                                    <p class="price">от 200 &#8381</p>
+                                    <button href="#" class="button" id="standard_box">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card tube col">
+                                <div class="card-img">
+                                    <img src="img/boxing_02.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Туба</h3>
+                                    <p class="price">от 200 &#8381</p>
+                                    <button href="#" class="button" id="standard_tube">Выбрать</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collection row boxing none" id="optimal">
+                            <div class="card box col">
+                                <div class="card-img">
+                                    <img src="img/boxing_box.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Коробка</h3>
+                                    <p class="price">от 350 &#8381</p>
+                                    <button href="#" class="button" id="optimal_box">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card tube col">
+                                <div class="card-img">
+                                    <img src="img/boxing_tube.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Туба</h3>
+                                    <p class="price">от 450 &#8381</p>
+                                    <button href="#" class="button" id="optimal_tube">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card toy col">
+                                <div class="card-img">
+                                    <img src="img/boxing_toy.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Игрушка</h3>
+                                    <p class="price">от 550 &#8381</p>
+                                    <button href="#" class="button" id="optimal_toy">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card pouch col">
+                                <div class="card-img">
+                                    <img src="img/boxing_pouch.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Мешочек</h3>
+                                    <p class="price">от 650 &#8381</p>
+                                    <button href="#" class="button" id="optimal_pouch">Выбрать</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collection row boxing none" id="excellent">
+                            <div class="card box col">
+                                <div class="card-img">
+                                    <img src="img/boxing_box.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Коробка</h3>
+                                    <p class="price">от 400 &#8381</p>
+                                    <button href="#" class="button" id="excellent_box">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card tube col">
+                                <div class="card-img">
+                                    <img src="img/boxing_tube.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Туба</h3>
+                                    <p class="price">от 500 &#8381</p>
+                                    <button href="#" class="button" id="excellent_tube">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card toy col">
+                                <div class="card-img">
+                                    <img src="img/boxing_toy.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Игрушка</h3>
+                                    <p class="price">от 600 &#8381</p>
+                                    <button href="#" class="button"  id="excellent_toy">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card pouch col">
+                                <div class="card-img">
+                                    <img src="img/boxing_pouch.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Мешочек</h3>
+                                    <p class="price">от 800 &#8381</p>
+                                    <button href="#" class="button" id="excellent_pouch">Выбрать</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collection row boxing none" id="premium">
+                            <div class="card box col">
+                                <div class="card-img">
+                                    <img src="img/boxing_box.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Коробка</h3>
+                                    <p class="price">от 600 &#8381</p>
+                                    <button href="#" class="button" id="premium_box">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card tube col">
+                                <div class="card-img">
+                                    <img src="img/boxing_tube.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Туба</h3>
+                                    <p class="price">от 800 &#8381</p>
+                                    <button href="#" class="button" id="premium_tube">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card toy col">
+                                <div class="card-img">
+                                    <img src="img/boxing_toy.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Игрушка</h3>
+                                    <p class="price">от 900 &#8381</p>
+                                    <button href="#" class="button" id="premium_toy">Выбрать</button>
+                                </div>
+                            </div>
+                            <div class="card pouch col">
+                                <div class="card-img">
+                                    <img src="img/boxing_pouch.jpg" alt="" class="img">
+                                </div>
+                                <div class="card-description">
+                                    <h3 class="card-title">Мешочек</h3>
+                                    <p class="price">от 1000 &#8381</p>
+                                    <button href="#" class="button" id="premium_pouch">Выбрать</button>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="#" class="goto"><img class="goto-main" src="img/goto_main.png" alt=""></a>
                     </div>
                 </section>
@@ -342,5 +498,6 @@
                 </div>
             </footer>
         </div>
+        <script src="js/js.js"></script>
     </body>
 </html>

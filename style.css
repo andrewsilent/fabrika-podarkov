@@ -153,6 +153,10 @@ a:hover, a:active {
   display: block;
 }
 
+.none {
+  display: none;
+}
+
 /* hidden for visitors, visible for screenreader */
 
 .visually-hidden {
@@ -377,14 +381,26 @@ body {
   margin-bottom: 100px;
 }
 
-.catalog .card {
+.catalog .general .card, .catalog .boxing .card {
   text-align: center;
-  color: #8c734b;
-  padding: 5px 5px 80px 5px;
   font-size: 0;
   width: 25%;
-  max-width: 461px;
   transition: box-shadow 0.5s ease 0s;
+}
+
+.catalog .standard .card {
+  width: 50%;
+}
+
+.catalog .general .card {
+  color: #8c734b;
+  padding: 5px 5px 80px 5px;
+  max-width: 461px;
+}
+
+.catalog .boxing .card {
+  color: #FFF;
+  height: 480px;
 }
 
 .catalog .card:hover {
@@ -392,24 +408,48 @@ body {
   transition: box-shadow 0.5s ease 0s;
 }
 
-.catalog .card .card-img {
+.catalog .general .card .card-img {
   max-height: 421px;
   max-width: 451px;
   overflow: hidden;
   margin: 0 auto;
 }
 
-.catalog .card .img {
+.catalog .general .card .img {
   transition: transform 0.5s ease 0s;
   width: 100%;
 }
 
-.catalog .card:hover .img {
+.catalog .boxing .card .card-img {
+  overflow: hidden;
+  position: absolute;
+}
+
+.catalog .boxing .card .img {
+  transition: transform 0.5s ease 0s;
+}
+
+.catalog .general .card:hover .img {
   transform: scale(1.1);
   transition: transform 0.5s ease 0s;
 }
 
+.catalog .boxing .card:hover .img {
+  transform: scale(1.1);
+  filter: brightness(0.7);
+  transition: all 0.5s ease 0s;
+}
+
+.catalog .boxing .card .card-description {
+  position: relative;
+  padding-top: 70px;
+}
+
 .catalog .card-title {
+  font: 700 6rem/1.5 'Amatic SC', cursive;
+}
+
+.catalog .general .card-title {
   font: 700 4.5rem/2 'Amatic SC', cursive;
 }
 
@@ -423,6 +463,20 @@ body {
 
 .catalog .button {
   font: 700 1.5rem/1.25 'PT Sans', sans-serif;
+  background-color: #FFF;
+  color: #8c734b;
+  display: inline-block;
+  padding: 18px 48px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid #FFF;
+  border-radius: 20px;
+  transition: background-color 0.5s ease 0s;
+  cursor: pointer;
+}
+
+.catalog .general .button {
+  font: 700 1.5rem/1.25 'PT Sans', sans-serif;
   background-color: #8c734b;
   color: #FFF;
   display: inline-block;
@@ -432,12 +486,34 @@ body {
   border: 1px solid #8c734b;
   border-radius: 20px;
   transition: background-color 0.5s ease 0s;
+  cursor: pointer;
 }
 
 .catalog .button:hover {
   background-color: #FFF;
   color: #8c734b;
   transition: background-color 0.5s ease 0s;
+}
+
+.catalog .boxing .button:hover {
+  background-color: #8c734b;
+  color: #FFF;
+  transition: background-color 0.5s ease 0s;
+}
+
+.catalog .control {
+  text-align: left;
+}
+
+.catalog .control .button {
+  font: 700 1.5rem/1.25 'PT Sans', sans-serif;
+  color: #8c734b;
+  display: inline-block;
+  padding: 18px 48px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease 0s;
+  cursor: pointer;
 }
 
 .catalog .goto {
