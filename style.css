@@ -636,7 +636,7 @@ body {
   box-sizing: border-box;
 }
 
-.salestart .catalog {
+/* .salestart .catalog {
   display: inline-block;
   margin: 50px 0;
   font: 700 1.8rem/1.25 'PT Sans', sans-serif;
@@ -656,7 +656,7 @@ body {
   color: #8c734b;
   transition: color, background-color 0.5s ease 0s;
   -webkit-transition: color, background-color 0.5s ease 0s;
-}
+} */
 
 .creative {
   text-align: center;
